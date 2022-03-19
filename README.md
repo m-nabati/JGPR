@@ -31,8 +31,8 @@ code
  
 # Citation
 Please cite JGPR in your publications if it helps your research. The following references are the BibTeX format of our paper and related letter for the JGPR.
-```
-@ARTICLE{9306813,
+```BibTeX
+@ARTICLE{Nabati2021,
   author={Nabati, Mohammad and Ghorashi, Seyed Ali and Shahbazian, Reza},
   journal={IEEE Communications Letters}, 
   title={Joint Coordinate Optimization in Fingerprint-Based Indoor Positioning}, 
@@ -41,6 +41,7 @@ Please cite JGPR in your publications if it helps your research. The following r
   number={4},
   pages={1192-1195},
   doi={10.1109/LCOMM.2020.3047352}}
+}
 ```
 
  
