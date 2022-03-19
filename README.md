@@ -21,6 +21,12 @@ The JGPR takes the following parameters and returns a trained model.
 
 Then, the trained model can predict the targets of newly arrived test samples. The predict function takes the following parameters:
   - **newInputs:** new inputs for predicting the targets
-  - **sigma.opt:** Noise kernel parameter (this parameter is optimized in the training process by default. However, it can also be selected manully here)
+  - **sigma.opt:** Noise kernel parameter (this parameter is optimized in the training process by default. However, it can be set manully here)
+
+
+## example
+```
+code
+```
  
  
