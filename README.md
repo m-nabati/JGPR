@@ -90,6 +90,7 @@ kern = quote(v1^2*exp(-d^2/v2^2))
 model = JGPR(x, y, kern = kern, init.params = c(0.1, 1, 0.1), MaxIter = 100)
 pred = model$predict(x.new)
 ```
+![This is an image](https://github.com/m-nabati/JGPR/blob/main/Toy.svg)
 Please note that JGPR act the same as conventional GPR (CGPR) for one-dimensional target.
  
 # Kernel function
