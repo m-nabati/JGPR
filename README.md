@@ -31,55 +31,32 @@ Then, the trained model can predict the targets of newly arrived test samples. T
 
 
 ## example
+to load the ```JGPR``` function from your current directory you can use the following code:
 ```R
-rm(list = ls()) #clear global environment
 script.dir <- dirname(sys.frame(1)$ofile) #load current script directory
 source(sprintf('%s/JGPR.R', script.dir)) #load JGPR from the current directory
-
-#-------------------------------------------------------------------------------
+```
+The following code is a part of ```example.R``` file.
+```R
 #preparing data
-x.new = as.matrix(seq(0, 10, 0.01), ncol = 1)
-y.r = matrix(0, nrow = length(x.new), ncol = 8)
-y.r[, 1] = sin(x.new)
-y.r[, 2] = sin(x.new+0.2)
-y.r[, 3] = sin(x.new+0.4)
-y.r[, 4] = sin(x.new+0.6)
-y.r[, 5] = sin(x.new+0.8)
-y.r[, 6] = sin(x.new+1)
-y.r[, 7] = sin(x.new+1.2)
-y.r[, 8] = sin(x.new+1.4)
+x.tr = as.matrix(seq(0, 10, 0.5), ncol = 1) #training inputs
+x.ts = as.matrix(seq(0, 10, 0.01), ncol = 1) #test inputs
 
-s = 11111;
+y.tr = matrix(0, nrow = length(x.tr), ncol = 8) #real values of training outputs
+y.trn = matrix(0, nrow = length(x.tr), ncol = 8) #training outputs + noise
+y.ts = matrix(0, nrow = length(x.ts), ncol = 8) #test outputs
+
 noiseDev = 0.8
-x = as.matrix(seq(0, 10, 0.5), ncol = 1)
-y = matrix(0, nrow = length(x), ncol = 8)
-set.seed(20*s)
-y[, 1] = sin(x) + rnorm(length(x), 0, noiseDev)
-set.seed(21*s)
-y[, 2] = sin(x+0.2) + rnorm(length(x), 0, noiseDev)
-set.seed(22*s)
-y[, 3] = sin(x+0.4) + rnorm(length(x), 0, noiseDev)
-set.seed(23*s)
-y[, 4] = sin(x+0.6) + rnorm(length(x), 0, noiseDev)
-set.seed(24*s)
-y[, 5] = sin(x+0.8) + rnorm(length(x), 0, noiseDev)
-set.seed(25*s)
-y[, 6] = sin(x+1) + rnorm(length(x), 0, noiseDev)
-set.seed(26*s)
-y[, 7] = sin(x+1.2) + rnorm(length(x), 0, noiseDev)
-set.seed(27*s)
-y[, 8] = sin(x+1.4) + rnorm(length(x), 0, noiseDev)
+s = 11111
 
+for (i in 1:8) {
+  set.seed((20+i-1)*s)
+  
+  y.tr[, i] = sin(x.tr + 0.2*(i-1))
+  y.trn[, i] = sin(x.tr + 0.2*(i-1)) + rnorm(length(x.tr), 0, noiseDev)
+  y.ts[, i] = sin(x.ts + 0.2*(i-1))
 
-y.real = matrix(0, nrow = length(x), ncol = 8)
-y.real[, 1] = sin(x)
-y.real[, 2] = sin(x+0.2)
-y.real[, 3] = sin(x+0.4)
-y.real[, 4] = sin(x+0.6)
-y.real[, 5] = sin(x+0.8)
-y.real[, 6] = sin(x+1)
-y.real[, 7] = sin(x+1.2)
-y.real[, 8] = sin(x+1.4)
+}
 
 #-------------------------------------------------------------------------------
 #define kernel function
@@ -87,8 +64,8 @@ kern = quote(v1^2*exp(-d^2/v2^2))
 
 #-------------------------------------------------------------------------------
 #JGPR
-model = JGPR(x, y, kern = kern, init.params = c(0.1, 1, 0.1), MaxIter = 100)
-pred = model$predict(x.new)
+model = JGPR(x.tr, y.trn, kern = kern, init.params = c(0.1, 1, 0.1), MaxIter = 100)
+pred = model$predict(x.ts)
 ```
 The following figure shows the result of using JGPR and conventional GPR in the toy multi-target regression problem. To get this figure please run the ```example.R``` file.
 ![result](https://github.com/m-nabati/JGPR/blob/main/Toy.svg)
