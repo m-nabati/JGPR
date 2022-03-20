@@ -80,7 +80,7 @@ The JGPR can be run with a user-defined kernel function. We can use ```v1, v2, .
 | <img src="https://render.githubusercontent.com/render/math?math=k(x_i, x_j) = v_1^2 x_i x_j">  | ```quote(v1^2*ip)```  |
 | <img src="https://render.githubusercontent.com/render/math?math=k(x_i, x_j) = v_1^2 exp\left(- \dfrac{ sin^2(d(x_i, x_j) / v_2^2) }{v_3^2} \right)">  | ```quote(v1^2*exp(-(sin(d/v2^2))^2/v3^2))```  |
 
-The ```v1, v2, ..., vm``` variables are optimized with initialization values, which is set in the ```init.params``` in the ```JGPR``` function. The ```init.params``` takes ```m+1``` values, which the last value is initialization value of the noise kernel. For instance, if we have ```v1``` and ```v2``` for defination of the kernel, the ```init.params``` takes three parameters (e.g, c(1, 1, 0.05)).
+The ```v1, v2, ..., vm``` variables are optimized with initialization values, which is set in the ```init.params``` in the ```JGPR``` function. The ```init.params``` takes ```m+1``` values, which the last value is initialization value of the noise kernel. For instance, if we have ```v1``` and ```v2``` for defination of the kernel, the ```init.params``` takes three parameters (e.g, ```c(1, 1, 0.05)```).
  
 # Citation
 Please cite JGPR in your publications if it helps your research. The following references are the BibTeX format of our paper and related letter to the JGPR.
