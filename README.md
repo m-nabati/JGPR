@@ -2,7 +2,7 @@
 This is the implementation of this paper for multi-target regression problems, named Joint Gaussian Process Regression (JGPR).
 
 # R Packages
-We have tested the JGPR with **R 4.1.2** and the following versions of packages:
+We have tested the JGPR with **R 4.1.2** and the following packages:
   
 | package  | version |
 | ------------- | ------------- |
@@ -15,7 +15,7 @@ We have tested the JGPR with **R 4.1.2** and the following versions of packages:
 The JGPR takes the following parameters and returns a trained model.
   - **inputs:** training inputs
   - **outputs:** training outputs (targets)
-  - **kern:** user define kernel
+  - **kern:** user-defined kernel
   - **init.params:**  initializing of kernel parameters
   - **fix.noise:** If true the noise kernel is not optimized in the training phase
   - **inp:** preprocessing of inputs (it can be 'st' or 'norm', which show standardization and normalization process, respectively)
@@ -69,10 +69,10 @@ pred = model$predict(x.ts)
 ```
 The following figure shows the result of using JGPR and conventional GPR in the toy multi-target regression problem. To get this figure please run the ```example.R``` file.
 ![result](https://github.com/m-nabati/JGPR/blob/main/Toy.svg)
-Please note that JGPR act the same as conventional GPR (CGPR) for one-dimensional target.
+Please note that JGPR acts the same as conventional GPR (CGPR) for a one-dimensional target.
  
 # Kernel function
- The JGPR can be run with a user-defined kernel function. We can use ```v1, v2, ..., vm``` coefficients inside the ```quote``` function for defining a kernel. These coefficients are optimized in the training phase. Also, ```d``` and ```ip``` indicate the euclidean distance and inner product, respectively. In the following we have provided some examples of kernels with their code for defining the kernels.
+The JGPR can be run with a user-defined kernel function. We can use ```v1, v2, ..., vm``` coefficients inside the ```quote``` function for defining a kernel. These coefficients are optimized in the training phase. Also, ```d``` and ```ip``` indicate the euclidean distance and inner product, respectively. We have provided some examples of kernels with their respected code.
  
 | kernel  | code |
 | ------------- | ------------- |
@@ -80,10 +80,10 @@ Please note that JGPR act the same as conventional GPR (CGPR) for one-dimensiona
 | <img src="https://render.githubusercontent.com/render/math?math=k(x_i, x_j) = v_1^2 x_i x_j">  | ```quote(v1^2*ip)```  |
 | <img src="https://render.githubusercontent.com/render/math?math=k(x_i, x_j) = v_1^2 exp\left(- \dfrac{ sin^2(d(x_i, x_j) / v_2^2) }{v_3^2} \right)">  | ```quote(v1^2*exp(-(sin(d/v2^2))^2/v3^2))```  |
 
-The ```v1, v2, ..., vm``` variables are optimized with initialization values, which is set in the ```init.params``` in the ```JGPR``` function. The ```init.params``` takes m+1 values, which the last value is initialization value of the noise kernel.
+The ```v1, v2, ..., vm``` variables are optimized with initialization values, which is set in the ```init.params``` in the ```JGPR``` function. The ```init.params``` takes ```m+1``` values, which the last value is initialization value of the noise kernel.
  
 # Citation
-Please cite JGPR in your publications if it helps your research. The following references are the BibTeX format of our paper and related letter for the JGPR.
+Please cite JGPR in your publications if it helps your research. The following references are the BibTeX format of our paper and related letter to the JGPR.
 ```BibTeX
 @ARTICLE{Nabati2021,
   author={Nabati, Mohammad and Ghorashi, Seyed Ali and Shahbazian, Reza},
