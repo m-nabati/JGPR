@@ -85,7 +85,7 @@ The ```v1, v2, ..., vm``` variables are optimized with initialization values, wh
 # Citation
 Please cite JGPR in your publications if it helps your research. The following references are the BibTeX format of our paper and related letter to the JGPR.
 ```BibTeX
-@ARTICLE{Nabati2021,
+@ARTICLE{Nabati2022,
   author={Nabati, Mohammad and Ghorashi, Seyed Ali and Shahbazian, Reza},
   journal={Machine Learning}, 
   title={JGPR: a computationally efficient multi-target Gaussian process regression algorithm}, 
