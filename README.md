@@ -1,5 +1,5 @@
 # Joint Gaussian Process Regression (JGPR)
-This is the implementation of this paper for multi-target regression problems, named Joint Gaussian Process Regression (JGPR).
+This is the implementation of [this paper](https://link.springer.com/article/10.1007/s10994-022-06170-3) for multi-target regression problems, named Joint Gaussian Process Regression (JGPR).
 
 # R Packages
 We have tested the JGPR with **R 4.1.2** and the following packages:
@@ -84,6 +84,14 @@ The ```v1, v2, ..., vm``` variables are optimized with initialization values, wh
  
 # Citation
 Please cite JGPR in your publications if it helps your research. The following references are the BibTeX format of our paper and related letter to the JGPR.
+```BibTeX
+@ARTICLE{Nabati2021,
+  author={Nabati, Mohammad and Ghorashi, Seyed Ali and Shahbazian, Reza},
+  journal={Machine Learning}, 
+  title={JGPR: a computationally efficient multi-target Gaussian process regression algorithm}, 
+  year={2022}}
+}
+```
 ```BibTeX
 @ARTICLE{Nabati2021,
   author={Nabati, Mohammad and Ghorashi, Seyed Ali and Shahbazian, Reza},
