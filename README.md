@@ -30,7 +30,7 @@ Then, the trained model can predict the targets of newly arrived test samples. T
   - **sigma.opt:** Noise kernel parameter (this parameter is optimized in the training process by default. However, it can be set manully here)
 
 
-## example
+## Example
 to load the ```JGPR``` function from your current directory you can use the following code:
 ```R
 script.dir <- dirname(sys.frame(1)$ofile) #load current script directory
