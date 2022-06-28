@@ -89,8 +89,11 @@ Please cite JGPR in your publications if it helps your research. The following r
   author={Nabati, Mohammad and Ghorashi, Seyed Ali and Shahbazian, Reza},
   journal={Machine Learning}, 
   title={JGPR: a computationally efficient multi-target Gaussian process regression algorithm}, 
-  year={2022}}
-}
+  year={2022}
+  volume={25},
+  number={6},
+  pages={1987–2010},
+  doi={https://doi.org/10.1007/s10994-022-06170-3}}
 ```
 ```BibTeX
 @ARTICLE{Nabati2021,
@@ -102,7 +105,6 @@ Please cite JGPR in your publications if it helps your research. The following r
   number={4},
   pages={1192-1195},
   doi={10.1109/LCOMM.2020.3047352}}
-}
 ```
 
  
