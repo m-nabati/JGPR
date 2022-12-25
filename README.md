@@ -90,7 +90,7 @@ Please cite JGPR in your publications if it helps your research. The following r
   journal={Machine Learning}, 
   title={JGPR: a computationally efficient multi-target Gaussian process regression algorithm}, 
   year={2022}
-  volume={25},
+  volume={111},
   number={6},
   pages={1987–2010},
   doi={https://doi.org/10.1007/s10994-022-06170-3}}
